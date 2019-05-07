@@ -1,0 +1,38 @@
+{
+    "type": "object",
+    "properties": {
+        "subscriptionId": {
+            "required": true,
+            "type": "string"
+        },
+        "resourceGroupName": {
+            "required": true,
+            "type": "string"
+        },
+        "virtualWANName": {
+            "required": true,
+            "type": "string"
+        },
+        "requestBody": {
+            "description": "List of Vpn-Sites",
+            "properties": {
+                "outputBlobSasUrl": {
+                    "description": "The sas-url to download the configurations for vpn-sites",
+                    "type": "string"
+                },
+                "vpnSites": {
+                    "description": "List of resource-ids of the vpn-sites for which config is to be downloaded.",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                }
+            },
+            "type": "object"
+        },
+        "api_version": {
+            "required": true,
+            "type": "string"
+        }
+    }
+}

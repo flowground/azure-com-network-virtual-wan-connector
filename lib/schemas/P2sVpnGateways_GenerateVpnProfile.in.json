@@ -1,0 +1,39 @@
+{
+    "type": "object",
+    "properties": {
+        "resourceGroupName": {
+            "required": true,
+            "type": "string"
+        },
+        "gatewayName": {
+            "required": true,
+            "type": "string"
+        },
+        "subscriptionId": {
+            "required": true,
+            "type": "string"
+        },
+        "requestBody": {
+            "description": "Vpn Client Parameters for package generation",
+            "properties": {
+                "authenticationMethod": {
+                    "description": "VPN client Authentication Method. Possible values are: 'EAPTLS' and 'EAPMSCHAPv2'.",
+                    "enum": [
+                        "EAPTLS",
+                        "EAPMSCHAPv2"
+                    ],
+                    "type": "string",
+                    "x-ms-enum": {
+                        "modelAsString": true,
+                        "name": "AuthenticationMethod"
+                    }
+                }
+            },
+            "type": "object"
+        },
+        "api_version": {
+            "required": true,
+            "type": "string"
+        }
+    }
+}

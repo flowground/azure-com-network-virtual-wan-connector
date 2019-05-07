@@ -1,0 +1,442 @@
+{
+    "type": "object",
+    "properties": {
+        "subscriptionId": {
+            "required": true,
+            "type": "string"
+        },
+        "resourceGroupName": {
+            "required": true,
+            "type": "string"
+        },
+        "virtualWanName": {
+            "required": true,
+            "type": "string"
+        },
+        "p2SVpnServerConfigurationName": {
+            "required": true,
+            "type": "string"
+        },
+        "requestBody": {
+            "allOf": [
+                {
+                    "description": "Reference to another subresource.",
+                    "properties": {
+                        "id": {
+                            "description": "Resource ID.",
+                            "type": "string"
+                        }
+                    },
+                    "x-ms-azure-resource": true,
+                    "type": "object"
+                }
+            ],
+            "description": "P2SVpnServerConfiguration Resource.",
+            "properties": {
+                "etag": {
+                    "description": "Gets a unique read-only string that changes whenever the resource is updated.",
+                    "readOnly": true,
+                    "type": "string"
+                },
+                "name": {
+                    "description": "The name of the resource that is unique within a resource group. This name can be used to access the resource.",
+                    "type": "string"
+                },
+                "properties": {
+                    "x-ms-client-flatten": true,
+                    "description": "Parameters for P2SVpnServerConfiguration",
+                    "properties": {
+                        "etag": {
+                            "description": "A unique read-only string that changes whenever the resource is updated.",
+                            "type": "string"
+                        },
+                        "name": {
+                            "description": "The name of the P2SVpnServerConfiguration that is unique within a VirtualWan in a resource group. This name can be used to access the resource along with Paren VirtualWan resource name.",
+                            "type": "string"
+                        },
+                        "p2SVpnGateways": {
+                            "items": {
+                                "description": "Reference to another subresource.",
+                                "properties": {
+                                    "id": {
+                                        "description": "Resource ID.",
+                                        "type": "string"
+                                    }
+                                },
+                                "x-ms-azure-resource": true,
+                                "type": "object"
+                            },
+                            "readOnly": true,
+                            "type": "array"
+                        },
+                        "p2SVpnServerConfigRadiusClientRootCertificates": {
+                            "description": "Radius client root certificate of P2SVpnServerConfiguration.",
+                            "items": {
+                                "allOf": [
+                                    {
+                                        "description": "Reference to another subresource.",
+                                        "properties": {
+                                            "id": {
+                                                "description": "Resource ID.",
+                                                "type": "string"
+                                            }
+                                        },
+                                        "x-ms-azure-resource": true,
+                                        "type": "object"
+                                    }
+                                ],
+                                "description": "Radius client root certificate of P2SVpnServerConfiguration.",
+                                "properties": {
+                                    "etag": {
+                                        "description": "A unique read-only string that changes whenever the resource is updated.",
+                                        "type": "string"
+                                    },
+                                    "name": {
+                                        "description": "The name of the resource that is unique within a resource group. This name can be used to access the resource.",
+                                        "type": "string"
+                                    },
+                                    "properties": {
+                                        "description": "Properties of the Radius client root certificate.",
+                                        "x-ms-client-flatten": true,
+                                        "properties": {
+                                            "provisioningState": {
+                                                "description": "The provisioning state of the Radius client root certificate resource. Possible values are: 'Updating', 'Deleting', and 'Failed'.",
+                                                "readOnly": true,
+                                                "type": "string"
+                                            },
+                                            "thumbprint": {
+                                                "description": "The Radius client root certificate thumbprint.",
+                                                "type": "string"
+                                            }
+                                        }
+                                    }
+                                },
+                                "type": "object"
+                            },
+                            "type": "array"
+                        },
+                        "p2SVpnServerConfigRadiusServerRootCertificates": {
+                            "description": "Radius Server root certificate of P2SVpnServerConfiguration.",
+                            "items": {
+                                "allOf": [
+                                    {
+                                        "description": "Reference to another subresource.",
+                                        "properties": {
+                                            "id": {
+                                                "description": "Resource ID.",
+                                                "type": "string"
+                                            }
+                                        },
+                                        "x-ms-azure-resource": true,
+                                        "type": "object"
+                                    }
+                                ],
+                                "description": "Radius Server root certificate of P2SVpnServerConfiguration.",
+                                "properties": {
+                                    "etag": {
+                                        "description": "A unique read-only string that changes whenever the resource is updated.",
+                                        "type": "string"
+                                    },
+                                    "name": {
+                                        "description": "The name of the resource that is unique within a resource group. This name can be used to access the resource.",
+                                        "type": "string"
+                                    },
+                                    "properties": {
+                                        "description": "Properties of the P2SVpnServerConfiguration Radius Server root certificate.",
+                                        "x-ms-client-flatten": true,
+                                        "properties": {
+                                            "provisioningState": {
+                                                "description": "The provisioning state of the P2SVpnServerConfiguration Radius Server root certificate resource. Possible values are: 'Updating', 'Deleting', and 'Failed'.",
+                                                "readOnly": true,
+                                                "type": "string"
+                                            },
+                                            "publicCertData": {
+                                                "description": "The certificate public data.",
+                                                "type": "string"
+                                            }
+                                        },
+                                        "required": [
+                                            "publicCertData"
+                                        ]
+                                    }
+                                },
+                                "required": [
+                                    "properties"
+                                ],
+                                "type": "object"
+                            },
+                            "type": "array"
+                        },
+                        "p2SVpnServerConfigVpnClientRevokedCertificates": {
+                            "description": "VPN client revoked certificate of P2SVpnServerConfiguration.",
+                            "items": {
+                                "allOf": [
+                                    {
+                                        "description": "Reference to another subresource.",
+                                        "properties": {
+                                            "id": {
+                                                "description": "Resource ID.",
+                                                "type": "string"
+                                            }
+                                        },
+                                        "x-ms-azure-resource": true,
+                                        "type": "object"
+                                    }
+                                ],
+                                "description": "VPN client revoked certificate of P2SVpnServerConfiguration.",
+                                "properties": {
+                                    "etag": {
+                                        "description": "A unique read-only string that changes whenever the resource is updated.",
+                                        "type": "string"
+                                    },
+                                    "name": {
+                                        "description": "The name of the resource that is unique within a resource group. This name can be used to access the resource.",
+                                        "type": "string"
+                                    },
+                                    "properties": {
+                                        "description": "Properties of the vpn client revoked certificate.",
+                                        "x-ms-client-flatten": true,
+                                        "properties": {
+                                            "provisioningState": {
+                                                "description": "The provisioning state of the VPN client revoked certificate resource. Possible values are: 'Updating', 'Deleting', and 'Failed'.",
+                                                "readOnly": true,
+                                                "type": "string"
+                                            },
+                                            "thumbprint": {
+                                                "description": "The revoked VPN client certificate thumbprint.",
+                                                "type": "string"
+                                            }
+                                        }
+                                    }
+                                },
+                                "type": "object"
+                            },
+                            "type": "array"
+                        },
+                        "p2SVpnServerConfigVpnClientRootCertificates": {
+                            "description": "VPN client root certificate of P2SVpnServerConfiguration.",
+                            "items": {
+                                "allOf": [
+                                    {
+                                        "description": "Reference to another subresource.",
+                                        "properties": {
+                                            "id": {
+                                                "description": "Resource ID.",
+                                                "type": "string"
+                                            }
+                                        },
+                                        "x-ms-azure-resource": true,
+                                        "type": "object"
+                                    }
+                                ],
+                                "description": "VPN client root certificate of P2SVpnServerConfiguration.",
+                                "properties": {
+                                    "etag": {
+                                        "description": "A unique read-only string that changes whenever the resource is updated.",
+                                        "type": "string"
+                                    },
+                                    "name": {
+                                        "description": "The name of the resource that is unique within a resource group. This name can be used to access the resource.",
+                                        "type": "string"
+                                    },
+                                    "properties": {
+                                        "description": "Properties of the P2SVpnServerConfiguration VPN client root certificate.",
+                                        "x-ms-client-flatten": true,
+                                        "properties": {
+                                            "provisioningState": {
+                                                "description": "The provisioning state of the P2SVpnServerConfiguration VPN client root certificate resource. Possible values are: 'Updating', 'Deleting', and 'Failed'.",
+                                                "readOnly": true,
+                                                "type": "string"
+                                            },
+                                            "publicCertData": {
+                                                "description": "The certificate public data.",
+                                                "type": "string"
+                                            }
+                                        },
+                                        "required": [
+                                            "publicCertData"
+                                        ]
+                                    }
+                                },
+                                "required": [
+                                    "properties"
+                                ],
+                                "type": "object"
+                            },
+                            "type": "array"
+                        },
+                        "provisioningState": {
+                            "description": "The provisioning state of the P2SVpnServerConfiguration resource. Possible values are: 'Updating', 'Deleting', and 'Failed'.",
+                            "readOnly": true,
+                            "type": "string"
+                        },
+                        "radiusServerAddress": {
+                            "description": "The radius server address property of the P2SVpnServerConfiguration resource for point to site client connection.",
+                            "type": "string"
+                        },
+                        "radiusServerSecret": {
+                            "description": "The radius secret property of the P2SVpnServerConfiguration resource for point to site client connection.",
+                            "type": "string"
+                        },
+                        "vpnClientIpsecPolicies": {
+                            "description": "VpnClientIpsecPolicies for P2SVpnServerConfiguration.",
+                            "items": {
+                                "description": "An IPSec Policy configuration for a virtual network gateway connection",
+                                "properties": {
+                                    "dhGroup": {
+                                        "description": "The DH Groups used in IKE Phase 1 for initial SA.",
+                                        "enum": [
+                                            "None",
+                                            "DHGroup1",
+                                            "DHGroup2",
+                                            "DHGroup14",
+                                            "DHGroup2048",
+                                            "ECP256",
+                                            "ECP384",
+                                            "DHGroup24"
+                                        ],
+                                        "type": "string",
+                                        "x-ms-enum": {
+                                            "modelAsString": true,
+                                            "name": "DhGroup"
+                                        }
+                                    },
+                                    "ikeEncryption": {
+                                        "description": "The IKE encryption algorithm (IKE phase 2).",
+                                        "enum": [
+                                            "DES",
+                                            "DES3",
+                                            "AES128",
+                                            "AES192",
+                                            "AES256",
+                                            "GCMAES256",
+                                            "GCMAES128"
+                                        ],
+                                        "type": "string",
+                                        "x-ms-enum": {
+                                            "modelAsString": true,
+                                            "name": "IkeEncryption"
+                                        }
+                                    },
+                                    "ikeIntegrity": {
+                                        "description": "The IKE integrity algorithm (IKE phase 2).",
+                                        "enum": [
+                                            "MD5",
+                                            "SHA1",
+                                            "SHA256",
+                                            "SHA384",
+                                            "GCMAES256",
+                                            "GCMAES128"
+                                        ],
+                                        "type": "string",
+                                        "x-ms-enum": {
+                                            "modelAsString": true,
+                                            "name": "IkeIntegrity"
+                                        }
+                                    },
+                                    "ipsecEncryption": {
+                                        "description": "The IPSec encryption algorithm (IKE phase 1).",
+                                        "enum": [
+                                            "None",
+                                            "DES",
+                                            "DES3",
+                                            "AES128",
+                                            "AES192",
+                                            "AES256",
+                                            "GCMAES128",
+                                            "GCMAES192",
+                                            "GCMAES256"
+                                        ],
+                                        "type": "string",
+                                        "x-ms-enum": {
+                                            "modelAsString": true,
+                                            "name": "IpsecEncryption"
+                                        }
+                                    },
+                                    "ipsecIntegrity": {
+                                        "description": "The IPSec integrity algorithm (IKE phase 1).",
+                                        "enum": [
+                                            "MD5",
+                                            "SHA1",
+                                            "SHA256",
+                                            "GCMAES128",
+                                            "GCMAES192",
+                                            "GCMAES256"
+                                        ],
+                                        "type": "string",
+                                        "x-ms-enum": {
+                                            "modelAsString": true,
+                                            "name": "IpsecIntegrity"
+                                        }
+                                    },
+                                    "pfsGroup": {
+                                        "description": "The Pfs Groups used in IKE Phase 2 for new child SA.",
+                                        "enum": [
+                                            "None",
+                                            "PFS1",
+                                            "PFS2",
+                                            "PFS2048",
+                                            "ECP256",
+                                            "ECP384",
+                                            "PFS24",
+                                            "PFS14",
+                                            "PFSMM"
+                                        ],
+                                        "type": "string",
+                                        "x-ms-enum": {
+                                            "modelAsString": true,
+                                            "name": "PfsGroup"
+                                        }
+                                    },
+                                    "saDataSizeKilobytes": {
+                                        "description": "The IPSec Security Association (also called Quick Mode or Phase 2 SA) payload size in KB for a site to site VPN tunnel.",
+                                        "format": "int32",
+                                        "type": "integer"
+                                    },
+                                    "saLifeTimeSeconds": {
+                                        "description": "The IPSec Security Association (also called Quick Mode or Phase 2 SA) lifetime in seconds for a site to site VPN tunnel.",
+                                        "format": "int32",
+                                        "type": "integer"
+                                    }
+                                },
+                                "required": [
+                                    "saLifeTimeSeconds",
+                                    "saDataSizeKilobytes",
+                                    "ipsecEncryption",
+                                    "ipsecIntegrity",
+                                    "ikeEncryption",
+                                    "ikeIntegrity",
+                                    "dhGroup",
+                                    "pfsGroup"
+                                ],
+                                "type": "object"
+                            },
+                            "type": "array"
+                        },
+                        "vpnProtocols": {
+                            "description": "VPN protocols for the P2SVpnServerConfiguration.",
+                            "items": {
+                                "description": "VPN protocol enabled for the P2SVpnServerConfiguration.",
+                                "enum": [
+                                    "IkeV2",
+                                    "OpenVPN"
+                                ],
+                                "type": "string",
+                                "x-ms-enum": {
+                                    "modelAsString": true,
+                                    "name": "VpnGatewayTunnelingProtocol"
+                                }
+                            },
+                            "type": "array"
+                        }
+                    }
+                }
+            },
+            "type": "object"
+        },
+        "api_version": {
+            "required": true,
+            "type": "string"
+        }
+    }
+}

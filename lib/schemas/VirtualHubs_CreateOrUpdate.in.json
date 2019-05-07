@@ -1,0 +1,241 @@
+{
+    "type": "object",
+    "properties": {
+        "subscriptionId": {
+            "required": true,
+            "type": "string"
+        },
+        "resourceGroupName": {
+            "required": true,
+            "type": "string"
+        },
+        "virtualHubName": {
+            "required": true,
+            "type": "string"
+        },
+        "requestBody": {
+            "allOf": [
+                {
+                    "description": "Common resource representation.",
+                    "properties": {
+                        "id": {
+                            "description": "Resource ID.",
+                            "type": "string"
+                        },
+                        "location": {
+                            "description": "Resource location.",
+                            "type": "string"
+                        },
+                        "name": {
+                            "description": "Resource name.",
+                            "readOnly": true,
+                            "type": "string"
+                        },
+                        "tags": {
+                            "additionalProperties": {
+                                "type": "string"
+                            },
+                            "description": "Resource tags.",
+                            "type": "object"
+                        },
+                        "type": {
+                            "description": "Resource type.",
+                            "readOnly": true,
+                            "type": "string"
+                        }
+                    },
+                    "x-ms-azure-resource": true,
+                    "type": "object"
+                }
+            ],
+            "description": "VirtualHub Resource.",
+            "properties": {
+                "etag": {
+                    "description": "Gets a unique read-only string that changes whenever the resource is updated.",
+                    "readOnly": true,
+                    "type": "string"
+                },
+                "properties": {
+                    "x-ms-client-flatten": true,
+                    "description": "Parameters for VirtualHub",
+                    "properties": {
+                        "addressPrefix": {
+                            "description": "Address-prefix for this VirtualHub.",
+                            "type": "string"
+                        },
+                        "expressRouteGateway": {
+                            "description": "Reference to another subresource.",
+                            "properties": {
+                                "id": {
+                                    "description": "Resource ID.",
+                                    "type": "string"
+                                }
+                            },
+                            "x-ms-azure-resource": true,
+                            "type": "object"
+                        },
+                        "p2SVpnGateway": {
+                            "description": "Reference to another subresource.",
+                            "properties": {
+                                "id": {
+                                    "description": "Resource ID.",
+                                    "type": "string"
+                                }
+                            },
+                            "x-ms-azure-resource": true,
+                            "type": "object"
+                        },
+                        "provisioningState": {
+                            "description": "The current provisioning state.",
+                            "enum": [
+                                "Succeeded",
+                                "Updating",
+                                "Deleting",
+                                "Failed"
+                            ],
+                            "readOnly": true,
+                            "type": "string",
+                            "x-ms-enum": {
+                                "modelAsString": true,
+                                "name": "ProvisioningState"
+                            }
+                        },
+                        "routeTable": {
+                            "description": "The routeTable associated with this virtual hub.",
+                            "properties": {
+                                "routes": {
+                                    "description": "List of all routes.",
+                                    "items": {
+                                        "description": "VirtualHub route",
+                                        "properties": {
+                                            "addressPrefixes": {
+                                                "description": "List of all addressPrefixes.",
+                                                "items": {
+                                                    "type": "string"
+                                                },
+                                                "type": "array"
+                                            },
+                                            "nextHopIpAddress": {
+                                                "description": "NextHop ip address.",
+                                                "type": "string"
+                                            }
+                                        },
+                                        "type": "object"
+                                    },
+                                    "type": "array"
+                                }
+                            },
+                            "type": "object"
+                        },
+                        "virtualNetworkConnections": {
+                            "description": "List of all vnet connections with this VirtualHub.",
+                            "items": {
+                                "allOf": [
+                                    {
+                                        "description": "Reference to another subresource.",
+                                        "properties": {
+                                            "id": {
+                                                "description": "Resource ID.",
+                                                "type": "string"
+                                            }
+                                        },
+                                        "x-ms-azure-resource": true,
+                                        "type": "object"
+                                    }
+                                ],
+                                "description": "HubVirtualNetworkConnection Resource.",
+                                "properties": {
+                                    "etag": {
+                                        "description": "Gets a unique read-only string that changes whenever the resource is updated.",
+                                        "readOnly": true,
+                                        "type": "string"
+                                    },
+                                    "name": {
+                                        "description": "The name of the resource that is unique within a resource group. This name can be used to access the resource.",
+                                        "type": "string"
+                                    },
+                                    "properties": {
+                                        "x-ms-client-flatten": true,
+                                        "description": "Parameters for HubVirtualNetworkConnection",
+                                        "properties": {
+                                            "allowHubToRemoteVnetTransit": {
+                                                "description": "VirtualHub to RemoteVnet transit to enabled or not.",
+                                                "type": "boolean"
+                                            },
+                                            "allowRemoteVnetToUseHubVnetGateways": {
+                                                "description": "Allow RemoteVnet to use Virtual Hub's gateways.",
+                                                "type": "boolean"
+                                            },
+                                            "enableInternetSecurity": {
+                                                "description": "Enable internet security",
+                                                "type": "boolean"
+                                            },
+                                            "provisioningState": {
+                                                "description": "The current provisioning state.",
+                                                "enum": [
+                                                    "Succeeded",
+                                                    "Updating",
+                                                    "Deleting",
+                                                    "Failed"
+                                                ],
+                                                "readOnly": true,
+                                                "type": "string",
+                                                "x-ms-enum": {
+                                                    "modelAsString": true,
+                                                    "name": "ProvisioningState"
+                                                }
+                                            },
+                                            "remoteVirtualNetwork": {
+                                                "description": "Reference to another subresource.",
+                                                "properties": {
+                                                    "id": {
+                                                        "description": "Resource ID.",
+                                                        "type": "string"
+                                                    }
+                                                },
+                                                "x-ms-azure-resource": true,
+                                                "type": "object"
+                                            }
+                                        }
+                                    }
+                                },
+                                "type": "object"
+                            },
+                            "type": "array"
+                        },
+                        "virtualWan": {
+                            "description": "Reference to another subresource.",
+                            "properties": {
+                                "id": {
+                                    "description": "Resource ID.",
+                                    "type": "string"
+                                }
+                            },
+                            "x-ms-azure-resource": true,
+                            "type": "object"
+                        },
+                        "vpnGateway": {
+                            "description": "Reference to another subresource.",
+                            "properties": {
+                                "id": {
+                                    "description": "Resource ID.",
+                                    "type": "string"
+                                }
+                            },
+                            "x-ms-azure-resource": true,
+                            "type": "object"
+                        }
+                    }
+                }
+            },
+            "required": [
+                "location"
+            ],
+            "type": "object"
+        },
+        "api_version": {
+            "required": true,
+            "type": "string"
+        }
+    }
+}

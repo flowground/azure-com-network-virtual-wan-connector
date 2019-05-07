@@ -1,0 +1,781 @@
+{
+    "title": "VirtualWANAsAServiceManagementClient",
+    "description": "REST API for Azure VirtualWAN As a Service.",
+    "docsUrl": "",
+    "url": "https://api.apis.guru/v2/specs/azure.com/network-virtualWan/2018-12-01/swagger.json",
+    "envVars": {
+        "OAUTH_CLIENT_ID": {
+            "description": "OAuth Client ID"
+        },
+        "OAUTH_CLIENT_SECRET": {
+            "description": "OAuth Client Secret"
+        }
+    },
+    "credentials": {
+        "fields": {
+            "server": {
+                "label": "Server",
+                "viewClass": "SelectView",
+                "model": [
+                    "https://management.azure.com/",
+                    "--- Custom URL"
+                ],
+                "required": true
+            },
+            "otherServer": {
+                "label": "Custom Server URL",
+                "viewClass": "TextFieldView"
+            },
+            "azure_auth": {
+                "label": "Azure Active Directory OAuth2 Flow",
+                "viewClass": "OAuthFieldView"
+            }
+        },
+        "oauth2": {
+            "client_id": "{{OAUTH_CLIENT_ID}}",
+            "client_secret": "{{OAUTH_CLIENT_SECRET}}",
+            "auth_uri": "https://login.microsoftonline.com/common/oauth2/authorize"
+        }
+    },
+    "triggers": {
+        "startFlow": {
+            "main": "./lib/triggers/startFlow.js",
+            "type": "polling",
+            "title": "Start Flow",
+            "fields": {}
+        }
+    },
+    "actions": {
+        "P2sVpnGateways_List": {
+            "main": "./lib/actions/P2sVpnGateways_List.js",
+            "title": "Lists all the P2SVpnGateways in a subscription.",
+            "description": "Lists all the P2SVpnGateways in a subscription.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/P2sVpnGateways_List.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "VirtualHubs_List": {
+            "main": "./lib/actions/VirtualHubs_List.js",
+            "title": "Lists all the VirtualHubs in a subscription.",
+            "description": "Lists all the VirtualHubs in a subscription.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/VirtualHubs_List.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "VirtualWans_List": {
+            "main": "./lib/actions/VirtualWans_List.js",
+            "title": "Lists all the VirtualWANs in a subscription.",
+            "description": "Lists all the VirtualWANs in a subscription.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/VirtualWans_List.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "VpnGateways_List": {
+            "main": "./lib/actions/VpnGateways_List.js",
+            "title": "Lists all the VpnGateways in a subscription.",
+            "description": "Lists all the VpnGateways in a subscription.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/VpnGateways_List.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "VpnSites_List": {
+            "main": "./lib/actions/VpnSites_List.js",
+            "title": "Lists all the VpnSites in a subscription.",
+            "description": "Lists all the VpnSites in a subscription.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/VpnSites_List.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "P2sVpnGateways_ListByResourceGroup": {
+            "main": "./lib/actions/P2sVpnGateways_ListByResourceGroup.js",
+            "title": "Lists all the P2SVpnGateways in a resource group.",
+            "description": "Lists all the P2SVpnGateways in a resource group.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/P2sVpnGateways_ListByResourceGroup.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "P2sVpnGateways_Delete": {
+            "main": "./lib/actions/P2sVpnGateways_Delete.js",
+            "title": "Deletes a virtual wan p2s vpn gateway.",
+            "description": "Deletes a virtual wan p2s vpn gateway.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/P2sVpnGateways_Delete.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "P2sVpnGateways_Get": {
+            "main": "./lib/actions/P2sVpnGateways_Get.js",
+            "title": "Retrieves the details of a virtual wan p2s vpn gateway.",
+            "description": "Retrieves the details of a virtual wan p2s vpn gateway.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/P2sVpnGateways_Get.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "P2sVpnGateways_UpdateTags": {
+            "main": "./lib/actions/P2sVpnGateways_UpdateTags.js",
+            "title": "Updates virtual wan p2s vpn gateway tags.",
+            "description": "Updates virtual wan p2s vpn gateway tags.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/P2sVpnGateways_UpdateTags.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "P2sVpnGateways_CreateOrUpdate": {
+            "main": "./lib/actions/P2sVpnGateways_CreateOrUpdate.js",
+            "title": "Creates a virtual wan p2s vpn gateway if it doesn't exist else updates the existing gateway.",
+            "description": "Creates a virtual wan p2s vpn gateway if it doesn't exist else updates the existing gateway.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/P2sVpnGateways_CreateOrUpdate.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "P2sVpnGateways_GenerateVpnProfile": {
+            "main": "./lib/actions/P2sVpnGateways_GenerateVpnProfile.js",
+            "title": "Generates VPN profile for P2S client of the P2SVpnGateway in the specified resource group.",
+            "description": "Generates VPN profile for P2S client of the P2SVpnGateway in the specified resource group.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/P2sVpnGateways_GenerateVpnProfile.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "VirtualHubs_ListByResourceGroup": {
+            "main": "./lib/actions/VirtualHubs_ListByResourceGroup.js",
+            "title": "Lists all the VirtualHubs in a resource group.",
+            "description": "Lists all the VirtualHubs in a resource group.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/VirtualHubs_ListByResourceGroup.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "VirtualHubs_Delete": {
+            "main": "./lib/actions/VirtualHubs_Delete.js",
+            "title": "Deletes a VirtualHub.",
+            "description": "Deletes a VirtualHub.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/VirtualHubs_Delete.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "VirtualHubs_Get": {
+            "main": "./lib/actions/VirtualHubs_Get.js",
+            "title": "Retrieves the details of a VirtualHub.",
+            "description": "Retrieves the details of a VirtualHub.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/VirtualHubs_Get.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "VirtualHubs_UpdateTags": {
+            "main": "./lib/actions/VirtualHubs_UpdateTags.js",
+            "title": "Updates VirtualHub tags.",
+            "description": "Updates VirtualHub tags.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/VirtualHubs_UpdateTags.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "VirtualHubs_CreateOrUpdate": {
+            "main": "./lib/actions/VirtualHubs_CreateOrUpdate.js",
+            "title": "Creates a VirtualHub resource if it doesn't exist else updates the existing VirtualHub.",
+            "description": "Creates a VirtualHub resource if it doesn't exist else updates the existing VirtualHub.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/VirtualHubs_CreateOrUpdate.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "HubVirtualNetworkConnections_List": {
+            "main": "./lib/actions/HubVirtualNetworkConnections_List.js",
+            "title": "Retrieves the details of all HubVirtualNetworkConnections.",
+            "description": "Retrieves the details of all HubVirtualNetworkConnections.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/HubVirtualNetworkConnections_List.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "HubVirtualNetworkConnections_Get": {
+            "main": "./lib/actions/HubVirtualNetworkConnections_Get.js",
+            "title": "Retrieves the details of a HubVirtualNetworkConnection.",
+            "description": "Retrieves the details of a HubVirtualNetworkConnection.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/HubVirtualNetworkConnections_Get.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "VirtualWans_ListByResourceGroup": {
+            "main": "./lib/actions/VirtualWans_ListByResourceGroup.js",
+            "title": "Lists all the VirtualWANs in a resource group.",
+            "description": "Lists all the VirtualWANs in a resource group.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/VirtualWans_ListByResourceGroup.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "VirtualWans_Delete": {
+            "main": "./lib/actions/VirtualWans_Delete.js",
+            "title": "Deletes a VirtualWAN.",
+            "description": "Deletes a VirtualWAN.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/VirtualWans_Delete.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "VirtualWans_Get": {
+            "main": "./lib/actions/VirtualWans_Get.js",
+            "title": "Retrieves the details of a VirtualWAN.",
+            "description": "Retrieves the details of a VirtualWAN.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/VirtualWans_Get.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "VirtualWans_UpdateTags": {
+            "main": "./lib/actions/VirtualWans_UpdateTags.js",
+            "title": "Updates a VirtualWAN tags.",
+            "description": "Updates a VirtualWAN tags.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/VirtualWans_UpdateTags.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "VirtualWans_CreateOrUpdate": {
+            "main": "./lib/actions/VirtualWans_CreateOrUpdate.js",
+            "title": "Creates a VirtualWAN resource if it doesn't exist else updates the existing VirtualWAN.",
+            "description": "Creates a VirtualWAN resource if it doesn't exist else updates the existing VirtualWAN.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/VirtualWans_CreateOrUpdate.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "SupportedSecurityProviders": {
+            "main": "./lib/actions/SupportedSecurityProviders.js",
+            "title": "Gives the supported security providers for the virtual wan.",
+            "description": "Gives the supported security providers for the virtual wan.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/SupportedSecurityProviders.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "VpnSitesConfiguration_Download": {
+            "main": "./lib/actions/VpnSitesConfiguration_Download.js",
+            "title": "Gives the sas-url to download the configurations for vpn-sites in a resource group.",
+            "description": "Gives the sas-url to download the configurations for vpn-sites in a resource group.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/VpnSitesConfiguration_Download.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "P2sVpnServerConfigurations_ListByVirtualWan": {
+            "main": "./lib/actions/P2sVpnServerConfigurations_ListByVirtualWan.js",
+            "title": "Retrieves all P2SVpnServerConfigurations for a particular VirtualWan.",
+            "description": "Retrieves all P2SVpnServerConfigurations for a particular VirtualWan.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/P2sVpnServerConfigurations_ListByVirtualWan.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "P2sVpnServerConfigurations_Delete": {
+            "main": "./lib/actions/P2sVpnServerConfigurations_Delete.js",
+            "title": "Deletes a P2SVpnServerConfiguration.",
+            "description": "Deletes a P2SVpnServerConfiguration.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/P2sVpnServerConfigurations_Delete.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "P2sVpnServerConfigurations_Get": {
+            "main": "./lib/actions/P2sVpnServerConfigurations_Get.js",
+            "title": "Retrieves the details of a P2SVpnServerConfiguration.",
+            "description": "Retrieves the details of a P2SVpnServerConfiguration.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/P2sVpnServerConfigurations_Get.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "P2sVpnServerConfigurations_CreateOrUpdate": {
+            "main": "./lib/actions/P2sVpnServerConfigurations_CreateOrUpdate.js",
+            "title": "Creates a P2SVpnServerConfiguration to associate with a VirtualWan if it doesn't exist else updates the existing P2SVpnServerConfiguration.",
+            "description": "Creates a P2SVpnServerConfiguration to associate with a VirtualWan if it doesn't exist else updates the existing P2SVpnServerConfiguration.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/P2sVpnServerConfigurations_CreateOrUpdate.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "VpnGateways_ListByResourceGroup": {
+            "main": "./lib/actions/VpnGateways_ListByResourceGroup.js",
+            "title": "Lists all the VpnGateways in a resource group.",
+            "description": "Lists all the VpnGateways in a resource group.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/VpnGateways_ListByResourceGroup.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "VpnGateways_Delete": {
+            "main": "./lib/actions/VpnGateways_Delete.js",
+            "title": "Deletes a virtual wan vpn gateway.",
+            "description": "Deletes a virtual wan vpn gateway.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/VpnGateways_Delete.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "VpnGateways_Get": {
+            "main": "./lib/actions/VpnGateways_Get.js",
+            "title": "Retrieves the details of a virtual wan vpn gateway.",
+            "description": "Retrieves the details of a virtual wan vpn gateway.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/VpnGateways_Get.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "VpnGateways_UpdateTags": {
+            "main": "./lib/actions/VpnGateways_UpdateTags.js",
+            "title": "Updates virtual wan vpn gateway tags.",
+            "description": "Updates virtual wan vpn gateway tags.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/VpnGateways_UpdateTags.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "VpnGateways_CreateOrUpdate": {
+            "main": "./lib/actions/VpnGateways_CreateOrUpdate.js",
+            "title": "Creates a virtual wan vpn gateway if it doesn't exist else updates the existing gateway.",
+            "description": "Creates a virtual wan vpn gateway if it doesn't exist else updates the existing gateway.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/VpnGateways_CreateOrUpdate.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "VpnConnections_ListByVpnGateway": {
+            "main": "./lib/actions/VpnConnections_ListByVpnGateway.js",
+            "title": "Retrieves all vpn connections for a particular virtual wan vpn gateway.",
+            "description": "Retrieves all vpn connections for a particular virtual wan vpn gateway.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/VpnConnections_ListByVpnGateway.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "VpnConnections_Delete": {
+            "main": "./lib/actions/VpnConnections_Delete.js",
+            "title": "Deletes a vpn connection.",
+            "description": "Deletes a vpn connection.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/VpnConnections_Delete.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "VpnConnections_Get": {
+            "main": "./lib/actions/VpnConnections_Get.js",
+            "title": "Retrieves the details of a vpn connection.",
+            "description": "Retrieves the details of a vpn connection.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/VpnConnections_Get.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "VpnConnections_CreateOrUpdate": {
+            "main": "./lib/actions/VpnConnections_CreateOrUpdate.js",
+            "title": "Creates a vpn connection to a scalable vpn gateway if it doesn't exist else updates the existing connection.",
+            "description": "Creates a vpn connection to a scalable vpn gateway if it doesn't exist else updates the existing connection.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/VpnConnections_CreateOrUpdate.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "VpnSites_ListByResourceGroup": {
+            "main": "./lib/actions/VpnSites_ListByResourceGroup.js",
+            "title": "Lists all the vpnSites in a resource group.",
+            "description": "Lists all the vpnSites in a resource group.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/VpnSites_ListByResourceGroup.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "VpnSites_Delete": {
+            "main": "./lib/actions/VpnSites_Delete.js",
+            "title": "Deletes a VpnSite.",
+            "description": "Deletes a VpnSite.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/VpnSites_Delete.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "VpnSites_Get": {
+            "main": "./lib/actions/VpnSites_Get.js",
+            "title": "Retrieves the details of a VPN site.",
+            "description": "Retrieves the details of a VPN site.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/VpnSites_Get.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "VpnSites_UpdateTags": {
+            "main": "./lib/actions/VpnSites_UpdateTags.js",
+            "title": "Updates VpnSite tags.",
+            "description": "Updates VpnSite tags.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/VpnSites_UpdateTags.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "VpnSites_CreateOrUpdate": {
+            "main": "./lib/actions/VpnSites_CreateOrUpdate.js",
+            "title": "Creates a VpnSite resource if it doesn't exist else updates the existing VpnSite.",
+            "description": "Creates a VpnSite resource if it doesn't exist else updates the existing VpnSite.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/VpnSites_CreateOrUpdate.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        }
+    }
+}

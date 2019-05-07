@@ -1,0 +1,285 @@
+{
+    "type": "object",
+    "properties": {
+        "subscriptionId": {
+            "required": true,
+            "type": "string"
+        },
+        "resourceGroupName": {
+            "required": true,
+            "type": "string"
+        },
+        "gatewayName": {
+            "required": true,
+            "type": "string"
+        },
+        "connectionName": {
+            "required": true,
+            "type": "string"
+        },
+        "requestBody": {
+            "allOf": [
+                {
+                    "description": "Reference to another subresource.",
+                    "properties": {
+                        "id": {
+                            "description": "Resource ID.",
+                            "type": "string"
+                        }
+                    },
+                    "x-ms-azure-resource": true,
+                    "type": "object"
+                }
+            ],
+            "description": "VpnConnection Resource.",
+            "properties": {
+                "etag": {
+                    "description": "Gets a unique read-only string that changes whenever the resource is updated.",
+                    "readOnly": true,
+                    "type": "string"
+                },
+                "name": {
+                    "description": "The name of the resource that is unique within a resource group. This name can be used to access the resource.",
+                    "type": "string"
+                },
+                "properties": {
+                    "x-ms-client-flatten": true,
+                    "description": "Parameters for VpnConnection",
+                    "properties": {
+                        "connectionBandwidth": {
+                            "description": "Expected bandwidth in MBPS.",
+                            "format": "int32",
+                            "type": "integer"
+                        },
+                        "connectionStatus": {
+                            "description": "The connection status.",
+                            "enum": [
+                                "Unknown",
+                                "Connecting",
+                                "Connected",
+                                "NotConnected"
+                            ],
+                            "readOnly": true,
+                            "type": "string",
+                            "x-ms-enum": {
+                                "modelAsString": true,
+                                "name": "VpnConnectionStatus"
+                            }
+                        },
+                        "egressBytesTransferred": {
+                            "description": "Egress bytes transferred.",
+                            "format": "int64",
+                            "readOnly": true,
+                            "type": "integer"
+                        },
+                        "enableBgp": {
+                            "description": "EnableBgp flag",
+                            "type": "boolean"
+                        },
+                        "enableInternetSecurity": {
+                            "description": "Enable internet security",
+                            "type": "boolean"
+                        },
+                        "enableRateLimiting": {
+                            "description": "EnableBgp flag",
+                            "type": "boolean"
+                        },
+                        "ingressBytesTransferred": {
+                            "description": "Ingress bytes transferred.",
+                            "format": "int64",
+                            "readOnly": true,
+                            "type": "integer"
+                        },
+                        "ipsecPolicies": {
+                            "description": "The IPSec Policies to be considered by this connection.",
+                            "items": {
+                                "description": "An IPSec Policy configuration for a virtual network gateway connection",
+                                "properties": {
+                                    "dhGroup": {
+                                        "description": "The DH Groups used in IKE Phase 1 for initial SA.",
+                                        "enum": [
+                                            "None",
+                                            "DHGroup1",
+                                            "DHGroup2",
+                                            "DHGroup14",
+                                            "DHGroup2048",
+                                            "ECP256",
+                                            "ECP384",
+                                            "DHGroup24"
+                                        ],
+                                        "type": "string",
+                                        "x-ms-enum": {
+                                            "modelAsString": true,
+                                            "name": "DhGroup"
+                                        }
+                                    },
+                                    "ikeEncryption": {
+                                        "description": "The IKE encryption algorithm (IKE phase 2).",
+                                        "enum": [
+                                            "DES",
+                                            "DES3",
+                                            "AES128",
+                                            "AES192",
+                                            "AES256",
+                                            "GCMAES256",
+                                            "GCMAES128"
+                                        ],
+                                        "type": "string",
+                                        "x-ms-enum": {
+                                            "modelAsString": true,
+                                            "name": "IkeEncryption"
+                                        }
+                                    },
+                                    "ikeIntegrity": {
+                                        "description": "The IKE integrity algorithm (IKE phase 2).",
+                                        "enum": [
+                                            "MD5",
+                                            "SHA1",
+                                            "SHA256",
+                                            "SHA384",
+                                            "GCMAES256",
+                                            "GCMAES128"
+                                        ],
+                                        "type": "string",
+                                        "x-ms-enum": {
+                                            "modelAsString": true,
+                                            "name": "IkeIntegrity"
+                                        }
+                                    },
+                                    "ipsecEncryption": {
+                                        "description": "The IPSec encryption algorithm (IKE phase 1).",
+                                        "enum": [
+                                            "None",
+                                            "DES",
+                                            "DES3",
+                                            "AES128",
+                                            "AES192",
+                                            "AES256",
+                                            "GCMAES128",
+                                            "GCMAES192",
+                                            "GCMAES256"
+                                        ],
+                                        "type": "string",
+                                        "x-ms-enum": {
+                                            "modelAsString": true,
+                                            "name": "IpsecEncryption"
+                                        }
+                                    },
+                                    "ipsecIntegrity": {
+                                        "description": "The IPSec integrity algorithm (IKE phase 1).",
+                                        "enum": [
+                                            "MD5",
+                                            "SHA1",
+                                            "SHA256",
+                                            "GCMAES128",
+                                            "GCMAES192",
+                                            "GCMAES256"
+                                        ],
+                                        "type": "string",
+                                        "x-ms-enum": {
+                                            "modelAsString": true,
+                                            "name": "IpsecIntegrity"
+                                        }
+                                    },
+                                    "pfsGroup": {
+                                        "description": "The Pfs Groups used in IKE Phase 2 for new child SA.",
+                                        "enum": [
+                                            "None",
+                                            "PFS1",
+                                            "PFS2",
+                                            "PFS2048",
+                                            "ECP256",
+                                            "ECP384",
+                                            "PFS24",
+                                            "PFS14",
+                                            "PFSMM"
+                                        ],
+                                        "type": "string",
+                                        "x-ms-enum": {
+                                            "modelAsString": true,
+                                            "name": "PfsGroup"
+                                        }
+                                    },
+                                    "saDataSizeKilobytes": {
+                                        "description": "The IPSec Security Association (also called Quick Mode or Phase 2 SA) payload size in KB for a site to site VPN tunnel.",
+                                        "format": "int32",
+                                        "type": "integer"
+                                    },
+                                    "saLifeTimeSeconds": {
+                                        "description": "The IPSec Security Association (also called Quick Mode or Phase 2 SA) lifetime in seconds for a site to site VPN tunnel.",
+                                        "format": "int32",
+                                        "type": "integer"
+                                    }
+                                },
+                                "required": [
+                                    "saLifeTimeSeconds",
+                                    "saDataSizeKilobytes",
+                                    "ipsecEncryption",
+                                    "ipsecIntegrity",
+                                    "ikeEncryption",
+                                    "ikeIntegrity",
+                                    "dhGroup",
+                                    "pfsGroup"
+                                ],
+                                "type": "object"
+                            },
+                            "type": "array"
+                        },
+                        "provisioningState": {
+                            "description": "The current provisioning state.",
+                            "enum": [
+                                "Succeeded",
+                                "Updating",
+                                "Deleting",
+                                "Failed"
+                            ],
+                            "readOnly": true,
+                            "type": "string",
+                            "x-ms-enum": {
+                                "modelAsString": true,
+                                "name": "ProvisioningState"
+                            }
+                        },
+                        "remoteVpnSite": {
+                            "description": "Reference to another subresource.",
+                            "properties": {
+                                "id": {
+                                    "description": "Resource ID.",
+                                    "type": "string"
+                                }
+                            },
+                            "x-ms-azure-resource": true,
+                            "type": "object"
+                        },
+                        "routingWeight": {
+                            "description": "Routing weight for vpn connection.",
+                            "format": "int32",
+                            "type": "integer"
+                        },
+                        "sharedKey": {
+                            "description": "SharedKey for the vpn connection.",
+                            "type": "string"
+                        },
+                        "vpnConnectionProtocolType": {
+                            "description": "Gateway connection protocol. Possible values are: 'IKEv2', 'IKEv1'.",
+                            "enum": [
+                                "IKEv2",
+                                "IKEv1"
+                            ],
+                            "type": "string",
+                            "x-ms-enum": {
+                                "modelAsString": true,
+                                "name": "VirtualNetworkGatewayConnectionProtocol"
+                            }
+                        }
+                    }
+                }
+            },
+            "type": "object"
+        },
+        "api_version": {
+            "required": true,
+            "type": "string"
+        }
+    }
+}
